@@ -1,0 +1,59 @@
+<!-- {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block stylesheets %}
+<link rel='stylesheet' type='text/css' href="{% static 'news/styles.css' %}">
+{% endblock%}
+
+
+{% block content %}
+
+<div id="user_account">
+    <h2> Your User Profile </h2> <br><br>
+    <p> Hi {{ story.author }}You can update your user profile here!</p>
+
+</div>
+
+<div class = "container py-5">
+    <h2> Your User Profile </h2>
+    <form method = "POST">
+        {% csrf_token %}
+        {{ register_form|crispy }}
+        <button class = 'btn btn-primary' type="submit">Register</button>
+    </form>
+    <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p> 
+</div>
+
+{% endblock %}
+
+
+need to include change first name, change last name, change email, change password, article
+
+
+<div>
+        {% if story.fave_by.count %}
+            Liked by: {{ for user in story.fave_by.count() %} user{{story.fave_by.count|pluralize:'}} {{user.username}} 
+            #check if this works
+        {% endif %}
+        <a href="{% url 'news"like' story.id %}"><button>Like</button>
+    </div> -->
+
+        <!-- <div id = 'stories-by-author'>
+        <h3>Here are all the stories written by you </h3>
+        {% if story in profile.newsstory_set.all %}
+            <ol>
+                <li><a href="{% url 'users:profile_stories' story.id %}"> {{ story.title }} </a></li> 
+            </ol> -->
+            <!-- <p> :P </p>
+        {% else %}
+            <p> WHY ISITBROKEN You haven't written any stories yet {{ user.username }}</p>
+        {% endif %}
+    </div> -->
+
+
+    <!-- adding and deleting stories -->
+    <!-- <br><br><br><br>
+        <a class='delete_edit_button' href="{% url 'news:storyEdit' request.author.id %}"> edit this story :) </a>
+        <br><br><br><br>
+        <a class='delete_edit_button' href="{% url 'news:storyDelete' request.user.id %}"> delete this story :( </a> -->

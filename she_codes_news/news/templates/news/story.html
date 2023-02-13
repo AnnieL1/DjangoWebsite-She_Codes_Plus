@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+   <link rel="stylesheet" type="text/css" href="{% static 'news/news_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="story-wrapper">
+    <img src = "{{ story.image }}"> </img>
+    <h2>{{ story.title }}</h2>
+    <h4>{{ story.author }}</h4>
+    <div id="story-content">
+        {{ story.content|linebreaks }}
+    </div>
+    
+</div>
+{% endblock %}
+
+

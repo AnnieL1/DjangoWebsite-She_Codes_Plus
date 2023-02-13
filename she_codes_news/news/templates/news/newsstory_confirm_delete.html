@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+   <link rel="stylesheet" type="text/css" href="{% static 'news/news_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id='create-story-intro'>
+    <h6> delete story. name of story {{newsstory.title}}</h6><br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input id='buttons' type="submit" value="yes, im sure">
+    </form>
+</div>
+
+{% endblock %}

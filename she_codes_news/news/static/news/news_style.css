@@ -1,0 +1,234 @@
+/* 
+    . for class
+    # for id  
+*/
+
+.story-card {
+    margin: 20x;
+    border: 2px solid #000;
+    padding: 5px;
+    background-color:#f0f0f0;
+}
+
+/* .story-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+} */
+
+#latest-stories {
+    display: flex;
+    /* grid-template-areas: "left-1 right-1" "left-1 right-1" "left-1 right-1"; */
+    column-gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-height: 600px;
+    height: auto;
+    width: 100%;
+}
+
+/* #story-card-1 {
+    grid-area: left-1;
+}
+
+#story-card-2 {
+    grid-area: right-1;
+}
+
+#story-card-3 {
+    grid-area: right-2;
+}
+
+#story-card-4 {
+    grid-area: right-3;
+} */
+
+/* #story-card-1 a,
+#story-card-2 a,
+#story-card-3 a, */
+#latest-stories .story-card {
+    display: inline-block;
+    flex-wrap: nowrap;
+    padding: 10px;
+    background-color: #b595cc;
+}
+
+/* #story-card-1 img,
+#story-card-2 img,
+#story-card-3 img, */
+#latest-stories .story-card img {
+    width: 100%;
+    height:min-content;
+    margin-bottom: 30px;
+    border: 1px solid #000;
+
+}
+
+/* #story-card-1 .story-card-text h3,
+#story-card-2 .story-card-text h3,
+#story-card-3 .story-card-text h3, */
+#latest-stories .story-card-text h3 {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* #story-card-1 .story-card-text h4,
+#story-card-2 .story-card-text h4,
+#story-card-3 .story-card-text h4, */
+#latest-stories .story-card-text h4 {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+}
+
+
+#all-stories {
+    display: inline-flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-content: space-between;
+} 
+
+#all-stories .story-card img {
+    width: 65%;
+    height:min-content; 
+    border: 1px solid #000;
+    margin: 5px;
+}
+
+#all-stories .story-card {
+    flex-basis: 20%;
+    flex-grow: 1;
+    max-height: 350px;
+    height: auto;
+    width: 100%;
+    background-color: #ece5f2;
+}
+
+#all-stories .story-card-text h3 {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+    /* position: relative;
+    justify-content: right;
+    text-align: center; */
+}
+
+#all-stories .story-card-text h4 {
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+#homepage-message {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 3rem;
+    font-family: Verdana, Tahoma, sans-serif;
+    text-transform: uppercase;
+}
+
+/* h2 {
+    font-size: 2rem;
+    font-family: Verdana, Tahoma, sans-serif;
+} */
+
+#buttons {
+    border: #000;
+    border-radius: 2000px;
+    background-color: orange;
+    padding: 30px 15px 30px 15px;
+    margin-left: 50px;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    width: auto;
+    cursor: pointer;
+    /* color: black; */
+	display: flex;
+    max-height: 110px;
+    height: auto;
+    max-width: 400px;
+    width: auto;
+}
+
+h2 {
+    font-family: Verdana, Tahoma, sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.logged-in-intro,
+.logged-out-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height:240px;
+    height: auto;
+    border-bottom: 2px solid #000;
+}
+
+#logged-out-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3rem;
+}
+
+#new_story_form,
+#story-wrapper {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+#pub_story_button {
+    border: #000;
+    background-color: orange;
+    padding: 30px 15px 30px 15px;
+    border-radius: 20px;
+    width: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+#new_story_form {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+}
+
+#story-content {
+    text-align: left;
+}
+
+#story-wrapper img {
+    height: 350px;
+    width: auto;
+    max-width: 1000px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+
+.delete_edit_button {
+    border-radius: 20px;
+    background-color: purple;
+    color: beige;
+    padding: 30px 15px 30px 15px;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    max-height: 40px;
+    height: 40px;
+    max-width: 200px;
+    width: 130px;
+    margin-bottom: 20px;
+}

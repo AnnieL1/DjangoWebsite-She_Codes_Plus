@@ -1,0 +1,58 @@
+   {% extends "base.html" %}
+   {% load static %}
+
+   {% block stylesheets %}
+   <link rel="stylesheet" type="text/css" href="{% static 'news/news_style.css' %}">
+   {% endblock %}
+
+   {% block content %}
+
+   <div id = 'homepage-message'>
+        {% if request.user.is_authenticated %}
+        <table style="width:100%">
+        <div class='logged-in-intro'>
+            <h6> Greetings {{ user.username }}. Welcome to your site. </h6> 
+            <!-- <h2>WRITE A NEW STORY</h2> -->
+            <!-- <button href="{% url 'news:newStory' %}">WRITE A NEW STORY</button>  -->
+            <a id='buttons' href="{% url 'news:newStory' %}">WRITE A NEW STORY</a>
+            <!-- <h2>VIEW YOUR PROFILE</h2> -->
+            <a id='buttons' href="{% url 'users:profile' request.user.id %}">VIEW YOUR PROFILE</a>
+        </div>
+
+        {% else %}
+        <table style="width:100%">
+        <div class='logged-out-intro'>
+            <p id="logged-out-text"> Welcome to She {Codes} News. Be our guest and browse, or create an account to start adding stories!</p>
+            <!-- <h2>Create Account</h2> -->
+            <a id='buttons' href="{% url 'users:createAccount' %}">CREATE YOUR PROFILE</a>
+            <!-- <p> You must be logged in to view this page. Create an account <a href="{% url 'users:createAccount' %}"> here. Login <a href="{% url 'news:newStory' %}"> Here</a> </p> -->
+        </div>
+        {% endif %}
+    </div>
+   <br><br>
+    <h2>Latest News</h2>
+
+    <div id="latest-stories">
+        {% if latest_stories %}
+            {% for story in latest_stories %}
+                {% include './storyCard.html' with story=story position=forloop.counter %}
+            {% endfor %}
+        {% else %}
+            <p>No stories are available.</p>
+        {% endif %}
+    </div>
+    <br><br><br><br>
+    <h2>All Stories</h2>
+    <div id="all-stories">
+        {% if all_stories %}
+            {% for story in all_stories %}
+                <!-- <p>{{ story.title }}</p> -->
+                {% include './storyCard.html' with story=story position=forloop.counter %}
+            {% endfor %}
+        {% else %}
+            <p>No stories are available.</p>
+        {% endif %}
+    </div>
+
+
+    {% endblock %}

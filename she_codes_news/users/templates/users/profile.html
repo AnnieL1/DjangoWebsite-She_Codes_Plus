@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block stylesheets %}
+   <link rel="stylesheet" type="text/css" href="{% static 'users/users_style.css' %}">
+{% endblock %}
+
+
+{% block content %} 
+   <p id="welcome"><mark>Welcome to your profile {{user.first_name}} {{user.last_name}}! </mark><p>
+
+    <div class = "profile_overview" id="profile-overview-{{ user.id }}">
+        <a href = "{url 'users:profile' profile.id %}"></a>
+
+        <h3>Your personal details are as follows.</h3><br><br>
+        <p>Your username: <b>{{user.username}}</b></p><br>
+        <p>Your email: <b>{{user.email}}</b></p><br>
+        <p>Your first name: <b>{{user.first_name}}</b></p><br>
+        <p>Your last name: <b>{{user.last_name}}</b></p><br>
+        <p>Your user ID: <b>{{user.id}}</b></p><br>
+        <p>You joined on the <b>{{user.date_joined}}</b></p><br>
+        <p>You last logged in on the <b>{{user.last_login}}</b></p><br>
+    </div>
+    
+    <div class='authors_stories'>
+    <h3 id="author_story"><br>Here are all the stories written by you. </h3>
+            <ol>
+        {% if profile.newsstory_set.count %}
+            {% for story in profile.newsstory_set.all %}
+                <li><a id='links' href="{% url 'news:story' story.id %}"> {{ story.title }}<a></li><br>
+            {% endfor %}
+            </ol> 
+        {% else %}
+            <p> No stories are available {{user.username}}</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

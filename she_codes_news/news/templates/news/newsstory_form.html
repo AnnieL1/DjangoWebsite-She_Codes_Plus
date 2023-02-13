@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+   <link rel="stylesheet" type="text/css" href="{% static 'news/news_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="new_story_form">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input id="pub_story_button" type="submit" value="submit">
+    </form>
+</div>
+{% endblock %}

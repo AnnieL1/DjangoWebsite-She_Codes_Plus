@@ -1,0 +1,18 @@
+<!-- users/templates/registration/login.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/users_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="login-page">
+    <h6>Welcome back! </h6>
+    <form id='form-text' method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button id='buttons' type="submit">Login</button>
+    </form>
+</div>
+{% endblock %}
